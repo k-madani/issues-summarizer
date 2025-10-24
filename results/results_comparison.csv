@@ -1,0 +1,6 @@
+Model,ROUGE-1,ROUGE-2,ROUGE-L,Training Loss,Time (min)
+Baseline,14.26,5.69,13.06,-,-
+Config 1,26.14,N/A,N/A,2.9948,6.4
+Config 2,24.25,N/A,N/A,3.0122,6.4
+Config 3 (Best),28.59,N/A,N/A,2.946,8.3
+Test Set,25.82,12.85,24.1,-,-

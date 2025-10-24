@@ -1,0 +1,85 @@
+{
+  "project": "GitHub Issue Summarizer",
+  "model": "Flan-T5-base (248M parameters)",
+  "dataset_size": {
+    "train": 3866,
+    "validation": 967,
+    "test": 500
+  },
+  "baseline": {
+    "model": "flan-t5-base (pre-trained, no fine-tuning)",
+    "rouge1": 14.26,
+    "rouge2": 5.69,
+    "rougeL": 13.06,
+    "samples_evaluated": 100
+  },
+  "configurations": [
+    {
+      "name": "Config 1",
+      "learning_rate": 5e-05,
+      "batch_size": 4,
+      "epochs": 1,
+      "warmup_steps": 500,
+      "training_loss": 2.9948,
+      "validation_rouge1": 26.14,
+      "time_minutes": 6.4
+    },
+    {
+      "name": "Config 2",
+      "learning_rate": 3e-05,
+      "batch_size": 4,
+      "epochs": 1,
+      "warmup_steps": 300,
+      "training_loss": 3.0122,
+      "validation_rouge1": 24.25,
+      "time_minutes": 6.4
+    },
+    {
+      "name": "Config 3",
+      "learning_rate": 0.0001,
+      "batch_size": 2,
+      "epochs": 1,
+      "warmup_steps": 700,
+      "training_loss": 2.946,
+      "validation_rouge1": 28.59,
+      "time_minutes": 8.3
+    }
+  ],
+  "best_model": {
+    "configuration": "Config 3",
+    "learning_rate": 0.0001,
+    "validation_rouge1": 28.59,
+    "test_rouge1": 25.82,
+    "test_rouge2": 12.85,
+    "test_rougeL": 24.1,
+    "generalization_gap": -2.77
+  },
+  "improvement_analysis": {
+    "baseline_rouge1": 14.26,
+    "best_rouge1": 28.59,
+    "absolute_improvement": 14.33,
+    "relative_improvement_percent": 100.5,
+    "conclusion": "Fine-tuning provided 100.5% improvement over baseline"
+  },
+  "performance_metrics": {
+    "inference_speed_ms": 306.8,
+    "throughput_per_second": 3.3,
+    "time_savings_for_50_issues": "97% (0.3 min vs 2.5 hours)"
+  },
+  "error_analysis": {
+    "total_analyzed": 50,
+    "excellent_over_70_rouge": 6,
+    "over_generalization": 7,
+    "missing_details": 18,
+    "wrong_focus": 19,
+    "excellent_percentage": 12.0
+  },
+  "training_details": {
+    "framework": "PyTorch + Hugging Face Transformers",
+    "training_approach": "Manual training loop with dynamic padding",
+    "optimization": "AdamW with linear warmup scheduler",
+    "gradient_clipping": "max_norm=1.0",
+    "hardware": "Google Colab Tesla T4 GPU",
+    "total_training_time_minutes": 21.1
+  }
+}
