@@ -76,6 +76,10 @@ results/
 docs/
 └── technical_report.pdf
 ```
+## Run on colab
+- data exploration: https://colab.research.google.com/drive/16Dv-vuPnEfhYr3JzBTFLWTpQPuMaomDT?usp=sharing
+- data preprocessing: https://colab.research.google.com/drive/13kjSJxDTFWkt6MsE_Ay473XAdHmgrBCW?usp=sharing
+- model training: https://colab.research.google.com/drive/1KRpUmmquGWdPw37DfLCPXhdnFkgW4A5l?usp=sharing
 
 ## Reproducibility
 
